@@ -1,4 +1,4 @@
-package com.tim.codegenerator;
+package com.tim;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
