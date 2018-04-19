@@ -1,0 +1,30 @@
+# 优先于application.yml加载
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native # 使用本地文件的形式存储配置（也可以使用git、svn用subversion）
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:D:\\config-server\\config-files
+
+# 支持加密存储
+        encrypt:
+          enabled: true
+
+# 加解密用的秘钥
+encrypt:
+  key: xstRxoapwerPmuren
+
+# svn配置
+#        svn:
+#          uri: http://127.0.0.1:8888/sys-config/config-server/config-files
+#          username: lizhiming
+#          password: 123456
+
+# Git配置（默认Git）
+#        git:
+#          uri: https://gitee.com/lzm/configFiles
+
