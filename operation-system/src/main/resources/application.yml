@@ -1,0 +1,31 @@
+# 服务端口配置
+server:
+  port: 8080
+
+
+
+# 去除密码验证
+management:
+  security:
+    enabled: false
+
+feign:
+  hystrix:
+    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+
+spring:
+# redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 1234567
+
+# 其它属性定义
+tim:
+  configVal: configVal-local
+  defConfigVal: defConfigVal-local

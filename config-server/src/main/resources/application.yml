@@ -1,0 +1,9 @@
+# 指定服务端口号
+server:
+  port: 9999
+
+# /refresh 是否需要验证权限
+management:
+  security:
+    enabled: true
+

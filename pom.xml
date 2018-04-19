@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<name>tim-root</name>
+
+    <groupId>com.tim</groupId>
+    <artifactId>tim-root</artifactId>
+    <version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<modules>
+
+		<!-- 分布式配置服务   说明：为所有系统及服务提供配置-->
+		<module>config-server</module>
+
+		<!-- 运营系统   说明：公司后台运营系统-->
+		<module>operation-system</module>
+
+		<!-- 用户服务 –       说明：提供用户查询、注册、登录等用户相关服务-->
+
+	</modules>
+
+</project>
