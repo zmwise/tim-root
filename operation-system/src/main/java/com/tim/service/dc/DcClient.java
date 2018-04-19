@@ -14,11 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient("service-user")
 public interface DcClient {
 
-    //    @RequestMapping(method = RequestMethod.GET, value = "/dc")
     @GetMapping("/dc")
     String consumer();
-
-    @GetMapping("/getUser")
-    String getUser(Long id);
 
 }

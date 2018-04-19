@@ -13,8 +13,8 @@ public class SysUserController {
     private ISysUserService sysUserService;
 
     @GetMapping("/getSysUser")
-    public String getSysUser(Long userId){
-        SysUser user = sysUserService.getSysUserById(userId);
+    public String getSysUser(String userId){
+        SysUser user = sysUserService.getSysUserById(Long.valueOf(userId));
         return user.toString();
     }
 }

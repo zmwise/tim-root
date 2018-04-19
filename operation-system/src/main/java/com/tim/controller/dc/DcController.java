@@ -19,8 +19,4 @@ public class DcController {
         return dcClient.consumer();
     }
 
-    @GetMapping("/getUser")
-    public String  getUser(Long id) {
-        return dcClient.getUser(id);
-    }
 }

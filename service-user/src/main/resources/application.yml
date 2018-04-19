@@ -1,6 +1,8 @@
 spring:
   application:
     name: service-user
+  profiles:
+    active: dev
 
 server:
   port: 2001

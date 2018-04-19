@@ -18,7 +18,7 @@ import org.springframework.context.annotation.ComponentScan;
 				"com.tim.service"})
 @EnableFeignClients
 @EnableDiscoveryClient
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
+@SpringBootApplication
 public class ServiceUserApplication {
 
 	/**
