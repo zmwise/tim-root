@@ -12,13 +12,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-@MapperScan("com.tim.dao")
-@ComponentScan(
-		basePackages={
-				"com.tim.service"})
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
+@MapperScan("com.tim.dao")
+@ComponentScan(
+		basePackages={
+				"com.tim"})
 public class ServiceUserApplication {
 
 	/**

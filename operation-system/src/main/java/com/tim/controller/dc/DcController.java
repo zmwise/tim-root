@@ -15,7 +15,7 @@ public class DcController {
 
 //    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     @GetMapping("/consumer")
-    public String  dc() {
+    public String  consumer() {
         return dcClient.consumer();
     }
 

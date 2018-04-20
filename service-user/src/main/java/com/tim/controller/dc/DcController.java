@@ -15,8 +15,8 @@ public class DcController {
         return "Hello " + name;
     }
 
-    @GetMapping("/dc")
-    public String dc(){
+    @GetMapping("/consumer")
+    public String consumer(){
         String services = "Services: "+ discoveryClient.getServices();
         System.out.println(services);
         return services;

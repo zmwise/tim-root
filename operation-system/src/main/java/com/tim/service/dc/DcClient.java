@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient("service-user")
 public interface DcClient {
 
-    @GetMapping("/dc")
+    @GetMapping("/consumer")
     String consumer();
 
 }
