@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient("service-user")
 public interface SysUserService {
 
-    @PostMapping("/getSysUser")
-    String getSysUser(@RequestParam("userId") String userId);
+    @PostMapping("/sysUser/getById")
+    String getById(@RequestParam("userId") String userId);
 }

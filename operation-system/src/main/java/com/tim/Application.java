@@ -9,6 +9,11 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
+/**
+ * @description: 运营系统程序入口
+ * @author: lizhiming
+ * @create: 2018/4/20 15:30
+ */
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication

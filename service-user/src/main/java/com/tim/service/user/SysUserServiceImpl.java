@@ -6,6 +6,11 @@ import com.tim.entity.sys.user.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @description:
+ * @author: lizhiming
+ * @create: 2018/4/20 15:30
+ */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> implements ISysUserService {
 
@@ -13,7 +18,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> impleme
     private SysUserDao sysUserDao;
 
     @Override
-    public SysUser getSysUserById(Long userId) {
+    public SysUser getById(Long userId) {
         return sysUserDao.selectById(userId);
     }
 }
