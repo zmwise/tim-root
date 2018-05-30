@@ -11,25 +11,24 @@
 - spring
 - spring mvc
 - spring boot
-- spring boot actuator
+- spring boot actuator（暂时未用）
 - spring cloud config
 - spring cloud eureka
 - spring cloud feign
-- spring cloud hystrix
-- spring cloud ribbon
-- spring cloud zuul
-- mybatis
+- spring cloud hystrix（暂时未用）
+- spring cloud ribbon（暂时未用）
+- spring cloud zuul（暂时未用）
 - mybatis plus
 - redis
 - druid
 
-## 快速开始（环境修改）
-1.安装redis、配置redis
-2.系统配置文件统一采用可读性、简洁性更好的yaml配置<br>
-    ```application.yml```<br>
-    ```application-dev.yml```<br>
-    ```application-test.yml```<br>
-    ```application-prod.yml```<br>
+## 快速开始（运行前提条件）
+1.安装redis、配置redis（config-server项目的resources/config/application.yml）
+2.创建数据库执行demo.sql
+3.config-server项目的resources/config下面的文件复制到D:\\config-server\\config-files下面作为公共配置
+4.项目导入IDEA中、按spring boot项目启动方式启动项目
+  启动顺序基本先启动config-server、eureka-server、service-user、operation-system
+5.目前实现了分布式配置、服务注册与发现、消费者调用服务提供者提供的查询用户服务、基本已经可以在该项目上进行开发了，其它功能后续完善
 
 ## 开发建议
 - 【创建表】表名建议使用小写，多个单词使用下划线拼接，新表表字段统一采用驼峰式命名，旧表保持原来用户"_"分隔

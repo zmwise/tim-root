@@ -24,7 +24,7 @@ public class SysUserController {
     public Boolean add(@RequestBody SysUser user) {
         System.out.println("------------------------------->");
         System.out.println(JSON.toJSON(user));
-        sysUserService.add("1");
+        sysUserService.add(user);
         return null;
     }
 }

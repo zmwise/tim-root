@@ -1,8 +1,10 @@
 package com.tim.controller.user;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.service.user.ISysUserService;
+import com.tim.sys.user.SysUserDto;
 import com.tim.syslog.SysControllerLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,5 +42,15 @@ public class SysUserController {
         System.out.println("++++++++++++++++++++++++++++++++>");
         System.out.println(JSON.toJSON(user));
         return sysUserService.insert(user);
+    }
+
+    @PostMapping("/list/{pageSize}/{pageNo}")
+    @SysControllerLog(desc = "根据ID获取系统用户")
+    public String list(@PathVariable int pageSize,
+                       @PathVariable int pageNo,
+                       @RequestBody(required = false) SysUserDto sysUserDto){
+        Page<SysUserDto> page = new Page<>(pageNo,pageSize);
+        SysUser user = null;
+        return JSON.toJSONString(user);
     }
 }
