@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  * @author: lizhiming
  * @create: 2018/4/20 15:30
  */
+//开启Feign的功能
 @EnableFeignClients
 @EnableDiscoveryClient
 //@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class}) springboot启动时会自动注入数据源和配置jpa
