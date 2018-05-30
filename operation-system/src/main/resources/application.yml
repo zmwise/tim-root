@@ -19,10 +19,17 @@ eureka:
       defaultZone: http://localhost:1001/eureka/
 
 spring:
-# redis 配置
+  # redis 配置
   redis:
     host: 127.0.0.1
     port: 6379
+    password: 123456
+  #datasource config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/tim-db?autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
     password: 123456
 
 # 其它属性定义
