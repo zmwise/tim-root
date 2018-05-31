@@ -1,6 +1,8 @@
 package com.tim.service.user;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.user.SysUser;
+import com.tim.sys.user.SysUserDto;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,7 +19,13 @@ public class SysUserFallBack implements SysUserService {
     }
 
     @Override
-    public Boolean add(SysUser user) {
+    public Boolean add(String user) {
         return false;
     }
+
+    @Override
+    public Page<SysUser> list(int pageSize, int pageNo, String sysUserDto) {
+        return null;
+    }
+
 }

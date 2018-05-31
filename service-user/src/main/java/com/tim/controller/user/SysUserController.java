@@ -36,21 +36,24 @@ public class SysUserController {
      * @auther: lizhiming
      * @date: 2018/4/20 16:03
      */
-    @RequestMapping(name = "/add", method = RequestMethod.POST)
+    @PostMapping("/add")
     @SysControllerLog(desc = "添加系统用户")
-    public Boolean add(@RequestBody SysUser user){
-        System.out.println("++++++++++++++++++++++++++++++++>");
-        System.out.println(JSON.toJSON(user));
-        return sysUserService.insert(user);
+    public Boolean add(@RequestParam("user") String user){
+        System.out.println("++++++++++++++add++++++++++++++++++>");
+        System.out.println(user);
+        SysUser sysUser = JSON.parseObject(user,SysUser.class);
+        return sysUserService.insert(sysUser);
     }
 
     @PostMapping("/list/{pageSize}/{pageNo}")
     @SysControllerLog(desc = "根据ID获取系统用户")
-    public String list(@PathVariable int pageSize,
+    public Page<SysUser> list(@PathVariable int pageSize,
                        @PathVariable int pageNo,
-                       @RequestBody(required = false) SysUserDto sysUserDto){
-        Page<SysUserDto> page = new Page<>(pageNo,pageSize);
-        SysUser user = null;
-        return JSON.toJSONString(user);
+                       @RequestBody(required = false) String sysUserDto){
+        System.out.println("+++++++++++++++list+++++++++++++++++>");
+        System.out.println(sysUserDto);
+        Page<SysUser> page = new Page<>(pageNo,pageSize);
+        Page<SysUser> users = sysUserService.selectPage(page);
+        return users;
     }
 }

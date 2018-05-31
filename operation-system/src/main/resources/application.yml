@@ -12,6 +12,8 @@ management:
 feign:
   hystrix:
     enabled: false
+  httpclient:
+    enabled: true
 
 eureka:
   client:
