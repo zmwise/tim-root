@@ -13,3 +13,9 @@ eureka:
 gate:
   ignore:
     startWith: /auth/jwt
+
+zuul:
+  routes:
+    api-a:
+      path: /operation/**
+      serviceId: operation-system
