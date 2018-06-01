@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: server-gateway
+
+server:
+  port: 1002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+
+gate:
+  ignore:
+    startWith: /auth/jwt

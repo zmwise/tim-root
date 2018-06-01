@@ -1,8 +1,8 @@
 # spring cloud 微服务项目(tim-root)
 
 ### 项目服务模块
-- config-server:spring cloud config 分布式配置中心
-- eureka-server:spring cloud eureka 服务注册与发现
+- server-config:spring cloud config 分布式配置中心
+- server-eureka:spring cloud eureka 服务注册与发现
 - code-generator:数据模型层（Dao、Entity、Mapper生成）
 - service-user:用户服务提供者（用户注册、登录、权限等）
 - operation-system:运营系统（服务消费者）
@@ -23,11 +23,11 @@
 - druid
 
 ## 快速开始（运行前提条件）
-1.安装redis、配置redis（config-server项目的resources/config/application.yml）
+1.安装redis、配置redis（server-config项目的resources/config/application.yml）
 2.创建数据库执行demo.sql
-3.config-server项目的resources/config下面的文件复制到D:\\config-server\\config-files下面作为公共配置
+3.server-config项目的resources/config下面的文件复制到D:\\server-config\\config-files下面作为公共配置
 4.项目导入IDEA中、按spring boot项目启动方式启动项目
-  启动顺序基本先启动config-server、eureka-server、service-user、operation-system
+  启动顺序基本先启动server-config、server-eureka、service-user、operation-system
 5.目前实现了分布式配置、服务注册与发现、消费者调用服务提供者提供的查询用户服务、基本已经可以在该项目上进行开发了，其它功能后续完善
 
 ## 开发建议
