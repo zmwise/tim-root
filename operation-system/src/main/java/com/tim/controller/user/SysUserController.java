@@ -3,13 +3,20 @@ package com.tim.controller.user;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.user.SysUser;
+import com.tim.request.JwtAuthenticationRequest;
+import com.tim.response.ObjectRestResponse;
+import com.tim.result.Result;
+import com.tim.result.ResultFactory;
+import com.tim.result.Status;
 import com.tim.service.user.SysUserService;
 import com.tim.sys.user.SysUserDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/sysUser")
+@Slf4j
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
@@ -36,5 +43,24 @@ public class SysUserController {
                        @RequestBody(required = false) SysUserDto sysUserDto){
         Page<SysUser> sus = sysUserService.list(pageSize,pageNo,JSON.toJSONString(sysUserDto));
         return JSON.toJSONString(sus);
+    }
+
+    @RequestMapping(value = "info", method = RequestMethod.GET)
+    @ResponseBody
+    public Result getUserInfo(String token) throws Exception {
+        SysUserDto userInfo = sysUserService.getUserInfo(token);
+        if(userInfo==null) {
+            return ResultFactory.result(Status.UNAUTHORIZED,Status.UNAUTHORIZED_MSG);
+        } else {
+            return ResultFactory.successData(userInfo);
+        }
+    }
+
+    @RequestMapping(value = "token", method = RequestMethod.POST)
+    public Result createAuthenticationToken(
+            @RequestBody JwtAuthenticationRequest authenticationRequest) throws Exception {
+        log.info(authenticationRequest.getUsername()+" require logging...");
+        String token = sysUserService.getToken(authenticationRequest);
+        return ResultFactory.successData(token);
     }
 }

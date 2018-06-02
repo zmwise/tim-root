@@ -3,11 +3,16 @@ package com.tim.controller.user;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.user.SysUser;
+import com.tim.result.Result;
+import com.tim.result.ResultFactory;
+import com.tim.result.Status;
 import com.tim.service.user.ISysUserService;
 import com.tim.sys.user.SysUserDto;
 import com.tim.syslog.SysControllerLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @description: 系统用户控制器
@@ -38,22 +43,43 @@ public class SysUserController {
      */
     @PostMapping("/add")
     @SysControllerLog(desc = "添加系统用户")
-    public Boolean add(@RequestParam("user") String user){
+    public Result add(@RequestParam("user") String user){
         System.out.println("++++++++++++++add++++++++++++++++++>");
         System.out.println(user);
         SysUser sysUser = JSON.parseObject(user,SysUser.class);
-        return sysUserService.insert(sysUser);
+        if(sysUserService.insert(sysUser)){
+            return ResultFactory.successResult();
+        }
+        return ResultFactory.result(Status.FAILURE,Status.FAILURE_MSG);
     }
 
     @PostMapping("/list/{pageSize}/{pageNo}")
     @SysControllerLog(desc = "根据ID获取系统用户")
-    public Page<SysUser> list(@PathVariable int pageSize,
+    public Result list(@PathVariable int pageSize,
                        @PathVariable int pageNo,
                        @RequestBody(required = false) String sysUserDto){
         System.out.println("+++++++++++++++list+++++++++++++++++>");
         System.out.println(sysUserDto);
         Page<SysUser> page = new Page<>(pageNo,pageSize);
         Page<SysUser> users = sysUserService.selectPage(page);
-        return users;
+        return ResultFactory.successData(users);
+    }
+
+    @RequestMapping(value = "info", method = RequestMethod.GET)
+    @SysControllerLog(desc = "返回用户登录信息")
+    @ResponseBody
+    public Result getUserInfo(@RequestParam("token") String token) throws Exception {
+        SysUserDto userInfo = sysUserService.getUserInfo(token);
+        if(userInfo==null) {
+            return ResultFactory.result(Status.UNAUTHORIZED,Status.UNAUTHORIZED_MSG);
+        } else {
+            return ResultFactory.successData(userInfo);
+        }
+    }
+
+    @RequestMapping(value = "getToken", method = RequestMethod.POST)
+    public Result getToken(@RequestBody Map<String,String> body) throws Exception {
+        String token = sysUserService.getToken(body.get("username"),body.get("password"));
+        return ResultFactory.successData(token);
     }
 }

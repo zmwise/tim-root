@@ -1,5 +1,7 @@
-package com.tim.utils;
+package com.tim.utils.jwt;
 
+import com.tim.common.jwt.IJWTInfo;
+import com.tim.config.jwt.KeyConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -15,9 +17,6 @@ public class JwtTokenUtil {
     private int expire;
     @Autowired
     private KeyConfiguration keyConfiguration;
-
-    @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
 
     public String generateToken(IJWTInfo jwtInfo) throws Exception {
         return JWTHelper.generateToken(jwtInfo, keyConfiguration.getUserPriKey(),expire);

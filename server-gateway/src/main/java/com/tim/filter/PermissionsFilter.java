@@ -39,13 +39,13 @@ public class PermissionsFilter extends ZuulFilter{
         这个run方法的返回值在当前版本(Dalston.SR3)中暂时没有任何意义，可以返回任意值*/
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        String login = request.getParameter("login");
+        /*String login = request.getParameter("Authorization");
         if (login == null) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             ctx.addZuulResponseHeader("content-type","text/html;charset=utf-8");
             ctx.setResponseBody("非法访问");
-        }
+        }*/
         return null;
     }
 }

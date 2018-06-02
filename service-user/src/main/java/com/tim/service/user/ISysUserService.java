@@ -2,6 +2,7 @@ package com.tim.service.user;
 
 import com.baomidou.mybatisplus.service.IService;
 import com.tim.entity.sys.user.SysUser;
+import com.tim.sys.user.SysUserDto;
 
 /**
  * @description:
@@ -15,4 +16,10 @@ public interface ISysUserService extends IService<SysUser> {
      * @return
      */
     SysUser getById(Long userId);
+
+    SysUserDto validate(String username,String password);
+
+    SysUserDto getUserInfo(String token) throws Exception;
+
+    String getToken(String username, String password) throws Exception;
 }

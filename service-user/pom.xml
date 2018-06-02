@@ -58,6 +58,16 @@
 			<artifactId>mybatisplus-spring-boot-starter</artifactId>
 			<version>${mybatisplus-spring-boot-starter.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.5</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.tim</groupId>
@@ -69,7 +79,7 @@
 			<artifactId>common-dto</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<plugins>

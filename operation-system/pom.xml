@@ -111,6 +111,11 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>com.tim</groupId>
+            <artifactId>common-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!-- 消费端不需要引用该JAR包，否则启动会报异常 找不到数据源 -->
 		<!--<dependency>
