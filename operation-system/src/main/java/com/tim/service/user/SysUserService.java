@@ -26,6 +26,6 @@ public interface SysUserService {
     @RequestMapping(value = "/sysUser/info", method = RequestMethod.POST)
     SysUserDto getUserInfo(@RequestParam("token") String token);
 
-    @RequestMapping(value = "/sysUser/getToken", method = RequestMethod.POST)
+    @RequestMapping(value = "/auth/token", method = RequestMethod.POST)
     String getToken(@RequestBody JwtAuthenticationRequest authenticationRequest);
 }

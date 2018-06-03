@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2018/6/1 19:38
  */
 @RestController
-@RequestMapping("jwt")
+@RequestMapping("auth")
 @Slf4j
 public class AuthController {
 

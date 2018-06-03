@@ -3,6 +3,7 @@ package com.tim.service.user;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.request.JwtAuthenticationRequest;
+import com.tim.sys.user.SysUserDto;
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,6 +26,11 @@ public class SysUserFallBack implements SysUserService {
 
     @Override
     public Page<SysUser> list(int pageSize, int pageNo, String sysUserDto) {
+        return null;
+    }
+
+    @Override
+    public SysUserDto getUserInfo(String token) {
         return null;
     }
 
