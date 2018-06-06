@@ -73,17 +73,16 @@ public class WebLogAspect {
         System.out.println("异常方法:" + (point.getTarget().getClass().getName() + "." + point.getSignature().getName() + "()"));
         System.out.println("请求人: + user.getName()");
         System.out.println("请求IP:" + ip);
-        System.out.println("请求参数:" + params);
         try {
-            System.out.println("方法描述:" + getControllerMethodDescription(point));
+            String desc =  getControllerMethodDescription(point);
+            long costMs = System.currentTimeMillis() - beginTime;
+            LOGGER.info("【WEB控制器请求日志】切入点请求方法名称：{} ({}) 耗时：{}ms", methodName, desc, costMs);
+            LOGGER.info("【WEB控制器请求日志】请求方法参数：" + JSON.toJSONString(params));
         } catch (Exception ex){
-            LOGGER.info("【WEB请求日志】获取请求方法描述异常：" + ex.getMessage());
+            LOGGER.info("【WEB控制器请求日志】获取请求方法描述异常：" + ex.getMessage());
         }
         /*List<User> users = userService.getAllUser();
         System.out.println("users:" + JSON.toJSONString(users));*/
-        long costMs = System.currentTimeMillis() - beginTime;
-        LOGGER.info("【WEB请求日志】切入点请求方法名称：{}  耗时：{}ms", methodName, costMs);
-        LOGGER.info("【WEB请求日志】请求方法参数：" + JSON.toJSONString(params));
     }
 
     /**
