@@ -2,6 +2,7 @@ package com.tim.controller.user;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.plugins.Page;
+import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.request.JwtAuthenticationRequest;
 import com.tim.result.Result;
@@ -9,9 +10,12 @@ import com.tim.result.ResultFactory;
 import com.tim.result.Status;
 import com.tim.service.user.SysUserService;
 import com.tim.sys.user.SysUserDto;
+import com.tim.syslog.SysControllerLog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/sysUser")
@@ -61,5 +65,12 @@ public class SysUserController {
         log.info(authenticationRequest.getUsername()+" require logging...");
         String token = sysUserService.getToken(authenticationRequest);
         return ResultFactory.successData(token);
+    }
+
+    @SysControllerLog(desc = "查询用户拥有的所有资源权限")
+    @RequestMapping(value = "res", method = RequestMethod.POST)
+    public Result userResource(String username) {
+        List<SysResource> ress = sysUserService.userResource(username);
+        return ResultFactory.successData(ress);
     }
 }

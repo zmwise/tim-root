@@ -2,11 +2,14 @@ package com.tim.service.user;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.config.fegin.FeignSimpleEncoderConfig;
+import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.request.JwtAuthenticationRequest;
 import com.tim.sys.user.SysUserDto;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @FeignClient(name = "service-user",fallback=SysUserFallBack.class,configuration = FeignSimpleEncoderConfig.class)
@@ -28,4 +31,7 @@ public interface SysUserService {
 
     @RequestMapping(value = "/auth/token", method = RequestMethod.POST)
     String getToken(@RequestBody JwtAuthenticationRequest authenticationRequest);
+
+    @RequestMapping(value = "/res/get", method = RequestMethod.POST)
+    List<SysResource> userResource(@RequestParam("username") String username);
 }

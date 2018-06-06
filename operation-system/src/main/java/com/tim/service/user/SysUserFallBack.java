@@ -1,10 +1,13 @@
 package com.tim.service.user;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.request.JwtAuthenticationRequest;
 import com.tim.sys.user.SysUserDto;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @description:
@@ -36,6 +39,11 @@ public class SysUserFallBack implements SysUserService {
 
     @Override
     public String getToken(JwtAuthenticationRequest authenticationRequest) {
+        return null;
+    }
+
+    @Override
+    public List<SysResource> userResource(String username) {
         return null;
     }
 

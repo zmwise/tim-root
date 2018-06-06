@@ -19,7 +19,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * @description: AOP统一处理WEB请求日志
@@ -60,8 +59,6 @@ public class WebLogAspect {
         //获取被拦截的方法
         Method method = signature.getMethod();
         //获取被拦截的方法名
-        String className = signature.getName();
-        //获取被拦截的方法名
         String methodName = method.getName();
         //获取请求ip
         String ip = request.getRemoteAddr();
@@ -82,8 +79,10 @@ public class WebLogAspect {
         } catch (Exception ex){
             LOGGER.info("【WEB请求日志】获取请求方法描述异常：" + ex.getMessage());
         }
+        /*List<User> users = userService.getAllUser();
+        System.out.println("users:" + JSON.toJSONString(users));*/
         long costMs = System.currentTimeMillis() - beginTime;
-        LOGGER.info("【WEB请求日志】切入点请求方法名称：{}.{}  耗时：{}ms", className,methodName, costMs);
+        LOGGER.info("【WEB请求日志】切入点请求方法名称：{}  耗时：{}ms", methodName, costMs);
         LOGGER.info("【WEB请求日志】请求方法参数：" + JSON.toJSONString(params));
     }
 

@@ -36,7 +36,7 @@ public class Generator {
          * 更改此参数为生成代码的表名称,可一次性生成多个表
          */
         String[] tables = {
-                "sys_user"
+                "sys_role","sys_resource"
         };
 
        for (String table : tables) {
