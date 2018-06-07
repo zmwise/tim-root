@@ -15,7 +15,18 @@ gate:
     startWith: /auth/jwt
 
 zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
   routes:
     api-a:
       path: /operation/**
       serviceId: operation-system
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
