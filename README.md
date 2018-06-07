@@ -3,6 +3,7 @@
 ### 项目服务模块
 - server-config:spring cloud config 分布式配置中心
 - server-eureka:spring cloud eureka 服务注册与发现
+- server-gateway:spring cloud gatewary 网关服务
 - code-generator:数据模型层（Dao、Entity、Mapper生成）
 - service-user:用户服务提供者（用户注册、登录、权限等）
 - operation-system:运营系统（服务消费者）
