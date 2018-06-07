@@ -1,6 +1,7 @@
 # 服务端口配置
 server:
   port: 8080
+  context-path: /operation
 
 
 

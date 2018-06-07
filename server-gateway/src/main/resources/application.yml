@@ -19,9 +19,14 @@ zuul:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
   routes:
-    api-a:
+#    api-a:
+#      path: /operation/**
+#      serviceId: operation-system
+#      strip-prefix: false
+    operation:
       path: /operation/**
-      serviceId: operation-system
+      url: http://localhost:8080/
+      strip-prefix: false
 
 hystrix:
     command:
