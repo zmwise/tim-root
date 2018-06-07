@@ -28,6 +28,19 @@ zuul:
       url: http://localhost:8080/
       strip-prefix: false
 
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
 hystrix:
     command:
         default:
