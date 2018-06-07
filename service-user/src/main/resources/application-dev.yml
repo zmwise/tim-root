@@ -45,6 +45,13 @@ mybatis-plus:
     default-statement-timeout: 25000 #设置超时时间，它决定驱动等待一个数据库响应的时间。 系统默认值是null，设置只是为了展示出来
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印查询语句 注释SQL打印进日志 放开SQL打印到控制台
 
+# 必须配置
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
 #common mapper config
 mapper:
   mappers: tk.mybatis.mapper.common.Mapper
