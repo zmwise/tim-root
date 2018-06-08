@@ -39,6 +39,8 @@
 
 		<!-- 运营系统   说明：公司后台运营系统-->
 		<module>operation-system</module>
+		<!-- 服务网关-->
+		<module>server-gateway</module>
 
 
 	</modules>
