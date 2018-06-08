@@ -22,8 +22,8 @@ public class AuthServiceImpl implements IAuthService{
     @Autowired
     private ISysUserService sysUserService;
     @Override
-    public String login(JwtAuthenticationRequest authenticationRequest) throws Exception {
-        SysUserDto userDto = sysUserService.validate(authenticationRequest.getUsername(),authenticationRequest.getPassword());
+    public String login(JwtAuthenticationRequest jwt) throws Exception {
+        SysUserDto userDto = sysUserService.validate(jwt.getUsername(),jwt.getPassword());
         if (!StringUtils.isEmpty(userDto.getId())) {
             return jwtTokenUtil.generateToken(new JWTInfo(userDto.getUsername(), userDto.getId() + "", userDto.getRealName()));
         }

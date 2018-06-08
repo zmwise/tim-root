@@ -25,9 +25,9 @@ public class AuthController {
 
     @RequestMapping(value = "token", method = RequestMethod.POST)
     public ObjectRestResponse<String> createAuthenticationToken(
-            @RequestBody JwtAuthenticationRequest authenticationRequest) throws Exception {
-        log.info(authenticationRequest.getUsername()+" require logging...");
-        final String token = authService.login(authenticationRequest);
+            @RequestBody JwtAuthenticationRequest jwt) throws Exception {
+        log.info(jwt.getUsername()+" require logging...");
+        final String token = authService.login(jwt);
         return new ObjectRestResponse<>().data(token);
     }
 }

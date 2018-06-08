@@ -5,10 +5,14 @@ import feign.Logger;
 import feign.Request;
 import feign.codec.Encoder;
 import feign.form.FormEncoder;
+import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.cloud.netflix.feign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.converter.FormHttpMessageConverter;
 
 @Configuration
 public class FeignSimpleEncoderConfig {
@@ -34,6 +38,9 @@ public class FeignSimpleEncoderConfig {
 
     @Bean
     public Encoder encoder(){
-        return new FormEncoder();
+        ObjectFactory<HttpMessageConverters> objectFactory = () ->
+                new HttpMessageConverters(new FormHttpMessageConverter());
+        return new SpringEncoder(objectFactory);
+        //return new FormEncoder();
     }
 }
