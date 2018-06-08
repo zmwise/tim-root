@@ -1,5 +1,6 @@
 package com.tim.service.dc;
 
+import com.tim.config.fegin.FeignSimpleEncoderConfig;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  *
  */
 //@FeignClient(name = "service-user", fallback = DcClientFallback.class)
-@FeignClient("service-user")
+@FeignClient(name = "service-user",configuration = FeignSimpleEncoderConfig.class)
 public interface DcClient {
 
     @GetMapping("/consumer")

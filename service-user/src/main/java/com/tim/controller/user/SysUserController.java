@@ -87,6 +87,6 @@ public class SysUserController {
      */
     @PostMapping(value = "uploadFile",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public String fileUpload(@RequestPart(value = "file") MultipartFile file){
-        return file.getName();
+        return file.getOriginalFilename();
     }
 }

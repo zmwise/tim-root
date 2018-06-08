@@ -1,11 +1,13 @@
-package com.tim.service.user;
+package com.tim.fegin.user;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
+import com.tim.fegin.user.SysUserService;
 import com.tim.request.JwtAuthenticationRequest;
 import com.tim.sys.user.SysUserDto;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 

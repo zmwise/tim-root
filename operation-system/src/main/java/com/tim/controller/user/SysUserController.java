@@ -4,16 +4,19 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
+import com.tim.fegin.upload.UploadService;
 import com.tim.request.JwtAuthenticationRequest;
 import com.tim.result.Result;
 import com.tim.result.ResultFactory;
 import com.tim.result.Status;
-import com.tim.service.user.SysUserService;
+import com.tim.fegin.user.SysUserService;
 import com.tim.sys.user.SysUserDto;
 import com.tim.syslog.SysControllerLog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -23,6 +26,8 @@ import java.util.List;
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
+    @Autowired
+    private UploadService uploadService;
 
     @PostMapping("/getById")
     @ResponseBody
@@ -72,5 +77,15 @@ public class SysUserController {
     public Result userResource(String username) {
         List<SysResource> ress = sysUserService.userResource(username);
         return ResultFactory.successData(ress);
+    }
+
+    /**
+     * 上传用户头像
+     * @param file
+     * @return
+     */
+    @PostMapping(value = "uploadFile",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public String fileUpload(@RequestPart(value = "file") MultipartFile file){
+        return uploadService.fileUpload(file);
     }
 }
