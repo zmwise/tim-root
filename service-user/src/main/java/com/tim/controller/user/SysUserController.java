@@ -3,7 +3,6 @@ package com.tim.controller.user;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.user.SysUser;
-import com.tim.request.JwtAuthenticationRequest;
 import com.tim.result.Result;
 import com.tim.result.ResultFactory;
 import com.tim.result.Status;
@@ -14,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.Map;
 
 /**
  * @description: 系统用户控制器

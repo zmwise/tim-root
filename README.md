@@ -16,9 +16,9 @@
 - spring cloud config
 - spring cloud eureka
 - spring cloud feign
-- spring cloud hystrix（暂时未用）
-- spring cloud ribbon（暂时未用）
-- spring cloud zuul（暂时未用）
+- spring cloud hystrix
+- spring cloud ribbon
+- spring cloud zuul
 - mybatis plus
 - redis
 - druid

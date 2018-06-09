@@ -1,7 +1,6 @@
 package com.tim.service.resource;
 
 import com.tim.entity.sys.resource.SysResource;
-import com.tim.request.JwtAuthenticationRequest;
 
 import java.util.List;
 

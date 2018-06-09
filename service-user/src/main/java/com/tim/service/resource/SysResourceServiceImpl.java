@@ -1,17 +1,10 @@
 package com.tim.service.resource;
 
-import com.tim.common.jwt.JWTInfo;
 import com.tim.dao.sys.resource.SysResourceDao;
 import com.tim.entity.sys.resource.SysResource;
-import com.tim.exception.auth.UserInvalidException;
-import com.tim.request.JwtAuthenticationRequest;
-import com.tim.service.user.ISysUserService;
-import com.tim.sys.user.SysUserDto;
 import com.tim.syslog.SysServiceLog;
-import com.tim.utils.jwt.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 

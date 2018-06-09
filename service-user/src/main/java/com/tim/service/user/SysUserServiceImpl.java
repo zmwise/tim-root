@@ -6,7 +6,6 @@ import com.tim.config.auth.UserAuthUtil;
 import com.tim.dao.sys.user.SysUserDao;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.exception.auth.UserInvalidException;
-import com.tim.request.JwtAuthenticationRequest;
 import com.tim.sys.user.SysUserDto;
 import com.tim.utils.jwt.JwtTokenUtil;
 import org.springframework.beans.BeanUtils;
