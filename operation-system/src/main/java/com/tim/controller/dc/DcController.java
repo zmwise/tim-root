@@ -1,14 +1,14 @@
 package com.tim.controller.dc;
 
 import com.tim.service.dc.DcClient;
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
+@Slf4j
 public class DcController {
-
-    private final Logger logger = Logger.getLogger(getClass());
 
     @Autowired
     DcClient dcClient;
