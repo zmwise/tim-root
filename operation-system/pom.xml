@@ -96,16 +96,6 @@
             <artifactId>code-generator</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-		<dependency>
-			<groupId>io.github.openfeign.form</groupId>
-			<artifactId>feign-form</artifactId>
-			<version>3.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>io.github.openfeign.form</groupId>
-			<artifactId>feign-form-spring</artifactId>
-			<version>3.0.3</version>
-		</dependency>
 		<!-- 使用Apache HttpClient替换Feign原生httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -130,7 +120,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-        <!-- 消费端不需要引用该JAR包，否则启动会报异常 找不到数据源 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<!-- 消费端不需要引用该JAR包，否则启动会报异常 找不到数据源 -->
 		<!--<dependency>
 			<groupId>com.tim</groupId>
 			<artifactId>code-generator</artifactId>
