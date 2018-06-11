@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.tim.service.user.ISysUserService;
 import com.tim.syslog.SysControllerLog;
 import com.tim.syslog.SysServiceLog;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -27,9 +28,8 @@ import java.lang.reflect.Method;
  */
 @Aspect
 @Component
+@Slf4j
 public class WebLogAspect {
-
-    private static final Logger LOGGER = LogManager.getLogger(WebLogAspect.class);
 
     @Autowired
     private ISysUserService sysUserService;
@@ -76,10 +76,10 @@ public class WebLogAspect {
         try {
             String desc =  getControllerMethodDescription(point);
             long costMs = System.currentTimeMillis() - beginTime;
-            LOGGER.info("【WEB控制器请求日志】切入点请求方法名称：{} ({}) 耗时：{}ms", methodName, desc, costMs);
-            LOGGER.info("【WEB控制器请求日志】请求方法参数：" + JSON.toJSONString(params));
+            log.info("【WEB控制器请求日志】切入点请求方法名称：{} ({}) 耗时：{}ms", methodName, desc, costMs);
+            log.info("【WEB控制器请求日志】请求方法参数：" + JSON.toJSONString(params));
         } catch (Exception ex){
-            LOGGER.info("【WEB控制器请求日志】获取请求方法描述异常：" + ex.getMessage());
+            log.info("【WEB控制器请求日志】获取请求方法描述异常：" + ex.getMessage());
         }
         /*List<User> users = userService.getAllUser();
         System.out.println("users:" + JSON.toJSONString(users));*/
@@ -119,12 +119,12 @@ public class WebLogAspect {
         try {
             System.out.println("方法描述:" + getServiceMthodDescription(point));
         } catch (Exception ex){
-            LOGGER.info("【WEB请求日志】获取请求方法描述异常：" + ex.getMessage());
+            log.info("【WEB请求日志】获取请求方法描述异常：" + ex.getMessage());
         }
 
         long costMs = System.currentTimeMillis() - beginTime;
-        LOGGER.info("【WEB请求日志】切入点请求方法名称：{}  耗时：{}ms", methodName, costMs);
-        LOGGER.info("【WEB请求日志】请求方法参数：" + JSON.toJSONString(params));
+        log.info("【WEB请求日志】切入点请求方法名称：{}  耗时：{}ms", methodName, costMs);
+        log.info("【WEB请求日志】请求方法参数：" + JSON.toJSONString(params));
     }
 
     /**

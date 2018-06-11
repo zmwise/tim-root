@@ -96,16 +96,6 @@
             <artifactId>code-generator</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-		<dependency>
-			<groupId>io.github.openfeign.form</groupId>
-			<artifactId>feign-form</artifactId>
-			<version>3.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>io.github.openfeign.form</groupId>
-			<artifactId>feign-form-spring</artifactId>
-			<version>3.0.3</version>
-		</dependency>
 		<!-- 使用Apache HttpClient替换Feign原生httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
