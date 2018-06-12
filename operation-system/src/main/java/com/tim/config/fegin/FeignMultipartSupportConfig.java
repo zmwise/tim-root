@@ -1,6 +1,5 @@
 package com.tim.config.fegin;
 
-import feign.Logger;
 import feign.codec.Encoder;
 import feign.form.spring.SpringFormEncoder;
 import org.springframework.context.annotation.Bean;
@@ -21,8 +20,4 @@ public class FeignMultipartSupportConfig {
     public Encoder feignFormEncoder(){
         return new SpringFormEncoder();
     }
-    /*@Bean
-    public Logger.Level multipartLoggerLevel() {
-        return Logger.Level.FULL;
-    }*/
 }

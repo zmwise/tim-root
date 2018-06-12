@@ -66,9 +66,9 @@ public class SysUserController {
 
     @RequestMapping(value = "token", method = RequestMethod.POST)
     public Result createAuthenticationToken(
-            @RequestBody JwtAuthenticationRequest authenticationRequest) throws Exception {
-        log.info(authenticationRequest.getUsername()+" require logging...");
-        String token = sysUserService.getToken(authenticationRequest);
+            @RequestBody JwtAuthenticationRequest jwt) throws Exception {
+        log.info(jwt.getUsername()+" require logging...");
+        String token = sysUserService.getToken(jwt);
         return ResultFactory.successData(token);
     }
 

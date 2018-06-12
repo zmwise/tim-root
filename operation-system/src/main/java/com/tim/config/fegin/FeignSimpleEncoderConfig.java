@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.cloud.netflix.feign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.converter.FormHttpMessageConverter;
 
@@ -37,7 +36,7 @@ public class FeignSimpleEncoderConfig {
     }
 
     @Bean
-    public Encoder encoder(){
+    public Encoder feignEncoder(){
         ObjectFactory<HttpMessageConverters> objectFactory = () ->
                 new HttpMessageConverters(new FormHttpMessageConverter());
         return new SpringEncoder(objectFactory);
