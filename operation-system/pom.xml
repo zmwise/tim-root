@@ -120,7 +120,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-        <!-- 消费端不需要引用该JAR包，否则启动会报异常 找不到数据源 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<!-- 消费端不需要引用该JAR包，否则启动会报异常 找不到数据源 -->
 		<!--<dependency>
 			<groupId>com.tim</groupId>
 			<artifactId>code-generator</artifactId>

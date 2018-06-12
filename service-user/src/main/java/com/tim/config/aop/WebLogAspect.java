@@ -7,6 +7,7 @@ import com.tim.syslog.SysServiceLog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -76,10 +77,10 @@ public class WebLogAspect {
         try {
             String desc =  getControllerMethodDescription(point);
             long costMs = System.currentTimeMillis() - beginTime;
-            log.info("【WEB控制器请求日志】切入点请求方法名称：{} ({}) 耗时：{}ms", methodName, desc, costMs);
-            log.info("【WEB控制器请求日志】请求方法参数：" + JSON.toJSONString(params));
+            LOGGER.info("【WEB控制器请求日志】切入点请求方法名称：{} ({}) 耗时：{}ms", methodName, desc, costMs);
+            LOGGER.info("【WEB控制器请求日志】请求方法参数：" + JSON.toJSONString(params));
         } catch (Exception ex){
-            log.info("【WEB控制器请求日志】获取请求方法描述异常：" + ex.getMessage());
+            LOGGER.info("【WEB控制器请求日志】获取请求方法描述异常：" + ex.getMessage());
         }
         /*List<User> users = userService.getAllUser();
         System.out.println("users:" + JSON.toJSONString(users));*/
@@ -119,12 +120,12 @@ public class WebLogAspect {
         try {
             System.out.println("方法描述:" + getServiceMthodDescription(point));
         } catch (Exception ex){
-            log.info("【WEB请求日志】获取请求方法描述异常：" + ex.getMessage());
+            LOGGER.info("【WEB请求日志】获取请求方法描述异常：" + ex.getMessage());
         }
 
         long costMs = System.currentTimeMillis() - beginTime;
-        log.info("【WEB请求日志】切入点请求方法名称：{}  耗时：{}ms", methodName, costMs);
-        log.info("【WEB请求日志】请求方法参数：" + JSON.toJSONString(params));
+        LOGGER.info("【WEB请求日志】切入点请求方法名称：{}  耗时：{}ms", methodName, costMs);
+        LOGGER.info("【WEB请求日志】请求方法参数：" + JSON.toJSONString(params));
     }
 
     /**
