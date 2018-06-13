@@ -90,7 +90,7 @@ public class Generator {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/tim-db?characterEncoding=utf8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/tim_db?characterEncoding=utf8&useSSL=false");
         mpg.setDataSource(dsc);
 
         // 策略配置
