@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.5.44:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
 
 spring:
   # redis 配置

@@ -1,10 +1,10 @@
 server:
-  port: 1002
+  port: 8762
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1001/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
 
 spring:
   # redis 配置
@@ -28,7 +28,7 @@ zuul:
 #      strip-prefix: false
     operation:
       path: /operation/**
-      url: http://localhost:8080/
+      url: http://127.0.0.1:8080/
       strip-prefix: false
 
 ribbon:

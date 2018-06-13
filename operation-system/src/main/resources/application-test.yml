@@ -1,0 +1,68 @@
+# 服务端口配置
+server:
+  port: 8080
+  context-path: /operation
+
+spring:
+  cloud:
+    config:
+      # cloud config 配置中心地址
+      uri: http://192.168.5.44:8762
+
+  # redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+  #datasource config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.31:3306/tim_db?autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+
+# 去除密码验证
+management:
+  security:
+    enabled: false
+
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.5.44:8761/eureka/
+
+
+# 其它属性定义
+tim:
+  configVal: configVal-local
+  defConfigVal: defConfigVal-local
+
+jwt:
+  token-header: Authorization
+  expire: 14400
+  rsa-secret: xx1WET12^%3^(WE45
+
+client:
+  id: ace-auth
+  secret: 123456
+  token-header: x-client-token
+  expire: 14400
+  rsa-secret: x2318^^(*WRYQWR(QW&T
+
+auth:
+  serviceId: service-user
+  user:
+    token-header: Authorization
+  client:
+    id: operation-system
+    secret: 123456
+    token-header: x-client-token

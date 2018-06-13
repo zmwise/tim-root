@@ -1,13 +1,1 @@
-spring:
-  #指定服务配置环境
-  profiles:
-    active: dev
 
-  # 服务名称配置
-  application:
-    name: operation-system
-
-  cloud:
-    config:
-      # cloud config 配置中心地址
-      uri: http://localhost:9999

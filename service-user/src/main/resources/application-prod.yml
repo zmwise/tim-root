@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1001/eureka/
+      defaultZone: http://192.168.5.44:8761/eureka/
 
 spring:
 
@@ -12,7 +12,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/tim-db?autoReconnect=true&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://192.168.1.31:3306/tim_db?autoReconnect=true&allowMultiQueries=true&useSSL=false
     username: root
     password: 123456
 
