@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>com.tim</groupId>
+		<artifactId>tim-root</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<artifactId>server-support</artifactId>
+
+	<modules>
+		<!-- 分布式配置服务   说明：为所有系统及服务提供配置-->
+		<module>server-config</module>
+		<!-- 注册中心 –       说明：所有服务注册到注册中心-->
+		<module>server-eureka</module>
+		<!-- 服务网关-->
+		<module>server-gateway</module>
+	</modules>
+</project>

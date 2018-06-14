@@ -1,6 +1,6 @@
 package com.tim.user;
 
-import com.tim.service.dc.user.UserService;
+import com.tim.fegin.upload.UploadService;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.fileupload.disk.DiskFileItem;
@@ -8,14 +8,13 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -27,7 +26,7 @@ import java.io.OutputStream;
 public class UploadTester {
 
     @Autowired
-    private UserService userService;
+    private UploadService uploadService;
 
     @Test
     @SneakyThrows
@@ -43,6 +42,6 @@ public class UploadTester {
         }
         MultipartFile multi = new CommonsMultipartFile(fileItem);
 
-        log.info(userService.handleFileUpload(multi));
+        log.info(uploadService.fileUpload(multi));
     }
 }

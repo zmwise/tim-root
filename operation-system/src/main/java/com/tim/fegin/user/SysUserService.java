@@ -1,6 +1,7 @@
 package com.tim.fegin.user;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.tim.config.fegin.FeignMultipartSupportConfig;
 import com.tim.config.fegin.FeignSimpleEncoderConfig;
 import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@FeignClient(name = "service-user",fallback=SysUserFallBack.class,configuration = FeignSimpleEncoderConfig.class)
+@FeignClient(name = "service-user",fallback=SysUserFallBack.class,configuration = FeignMultipartSupportConfig.class)
 public interface SysUserService {
 
     @PostMapping("/sysUser/getById")
@@ -29,7 +30,7 @@ public interface SysUserService {
     @RequestMapping(value = "/sysUser/info", method = RequestMethod.POST)
     SysUserDto getUserInfo(@RequestParam("token") String token);
 
-    @RequestMapping(value = "/auth/token", method = RequestMethod.POST)
+    @RequestMapping(value = "/auth/token", method = RequestMethod.POST, consumes = "application/json")
     String getToken(@RequestBody JwtAuthenticationRequest jwt);
 
     @RequestMapping(value = "/res/get", method = RequestMethod.POST)

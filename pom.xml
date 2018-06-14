@@ -25,24 +25,11 @@
 	</properties>
 
 	<modules>
-		<!-- 公共数据对象 –       说明：提供各系统数据对象传输-->
-		<module>common-dto</module>
-		<!-- 代码生成器 –       说明：根据表名生成相应的代码-->
-		<module>code-generator</module>
-
-		<!-- 分布式配置服务   说明：为所有系统及服务提供配置-->
-		<module>server-config</module>
-		<!-- 注册中心 –       说明：所有服务注册到注册中心-->
-		<module>server-eureka</module>
-		<!-- 用户服务 –       说明：提供用户查询、注册、登录等用户相关服务-->
-		<module>service-user</module>
-
 		<!-- 运营系统   说明：公司后台运营系统-->
 		<module>operation-system</module>
-		<!-- 服务网关-->
-		<module>server-gateway</module>
-
-
+		<module>server-support</module>
+		<module>service-support</module>
+		<module>common-support</module>
 	</modules>
 
 	<dependencies>

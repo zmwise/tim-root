@@ -7,7 +7,7 @@ spring:
   cloud:
     config:
       # cloud config 配置中心地址
-      uri: http://127.0.0.1:8762
+      uri: http://127.0.0.1:876
 
   # redis 配置
   redis:

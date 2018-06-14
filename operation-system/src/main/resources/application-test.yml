@@ -7,7 +7,7 @@ spring:
   cloud:
     config:
       # cloud config 配置中心地址
-      uri: http://192.168.5.44:8762
+      uri: http://192.168.5.44:8760
 
   # redis 配置
   redis:
@@ -19,8 +19,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://192.168.1.31:3306/tim_db?autoReconnect=true&allowMultiQueries=true&useSSL=false
-    username: root
-    password: 123456
+    username: test_ryd
+    password: test123
 
 # 去除密码验证
 management:
