@@ -1,8 +1,0 @@
-# 运营系统的公共配置
-spring:
-  #指定服务配置环境
-  profiles:
-    active: dev
-  # 服务名称配置
-  application:
-    name: server-config

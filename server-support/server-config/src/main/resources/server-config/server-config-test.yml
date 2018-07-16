@@ -1,6 +1,0 @@
-# 运营系统的开发环境配置
-
-# 服务端口配置
-server:
-  port: 8080
-  context-path: /config
