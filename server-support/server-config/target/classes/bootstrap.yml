@@ -1,14 +1,27 @@
+# 指定服务端口号
+server:
+  port: 8888
+
+# /refresh 是否需要验证权限
+management:
+  security:
+    enabled: true
+
 # 优先于application.yml加载
 spring:
   application:
     name: server-config
-  profiles:
-    active: native # 使用本地文件的形式存储配置（也可以使用git、svn用subversion）
   cloud:
     config:
       server:
-        native:
-          search-locations: file:D:\\server-config\\config-files
+        git:
+          uri: https://github.com/liwiseap/config-repo/
+          username: liwiseap@163.com
+          password: sbtdkjje812
+          search-paths: operation-system,service-user
+#        native:
+#          search-locations: D:\\server-config\\config-files
+#          search-paths: operation-system
 
 # 支持加密存储
         encrypt:

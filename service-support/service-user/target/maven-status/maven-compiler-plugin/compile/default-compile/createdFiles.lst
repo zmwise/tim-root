@@ -7,6 +7,7 @@ com\tim\config\jwt\KeyConfiguration.class
 com\tim\common\auth\UserAuthConfig.class
 com\tim\utils\jwt\JwtTokenUtil.class
 com\tim\service\user\ISysUserService.class
+com\tim\utils\encrypt\PasswordHelper.class
 com\tim\syslog\SysServiceLog.class
 com\tim\controller\auth\AuthController.class
 com\tim\syslog\SysControllerLog.class

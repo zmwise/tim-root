@@ -28,8 +28,13 @@
 1.安装redis、配置redis（server-config项目的resources/config/application.yml）
 2.创建数据库执行demo.sql
 3.server-config项目的resources/config下面的文件复制到D:\\server-config\\config-files下面作为公共配置
-4.项目导入IDEA中、按spring boot项目启动方式启动项目
-  启动顺序基本先启动server-config、server-eureka、service-user、operation-system、server-eureka
+4.项目导入IDEA中、按spring boot项目启动方式启动项目,启动顺序基本先启动
+ - server-config、
+ - server-eureka、
+ - service-user、
+ - operation-system、
+ - server-eureka 
+    
 5.目前实现了分布式配置、服务注册与发现、消费者调用服务提供者提供的查询用户服务、基本已经可以在该项目上进行开发了，其它功能后续完善
 
 ## 开发建议

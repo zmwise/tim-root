@@ -1,13 +1,3 @@
 com\tim\config\druid\DruidSource.class
 com\tim\dao\sys\resource\SysResourceDao.class
-com\tim\entity\sys\role\SysRole.class
-com\tim\generator\Generator$1.class
-com\tim\CodeGeneratorApplication.class
-com\tim\dao\sys\user\SysUserDao.class
-com\tim\generator\Generator.class
-com\tim\entity\sys\user\SysUser.class
 com\tim\config\druid\DruidConfig.class
-com\tim\entity\sys\resource\SysResource.class
-com\tim\generator\Generator$2.class
-com\tim\generator\Generator$3.class
-com\tim\dao\sys\role\SysRoleDao.class

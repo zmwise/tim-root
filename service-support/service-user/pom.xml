@@ -41,6 +41,11 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<!-- cloud config 组件 配置中心 客户端 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
 		<!-- eureka服务提供方 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

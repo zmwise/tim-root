@@ -1,6 +1,7 @@
 D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\exception\auth\ClientTokenException.java
 D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\config\aop\WebLogAspect.java
 D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\controller\dc\DcController.java
+D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\utils\encrypt\PasswordHelper.java
 D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\exception\auth\ClientForbiddenException.java
 D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\utils\jwt\JWTHelper.java
 D:\workspace-idea\tim-root\service-support\service-user\src\main\java\com\tim\utils\string\StringUtil.java

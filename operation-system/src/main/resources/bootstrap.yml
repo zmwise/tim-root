@@ -1,0 +1,7 @@
+# 优先于application.yml加载
+spring:
+  application:
+    name: operation-system
+  profiles:
+    active: dev
+
