@@ -1,3 +1,9 @@
+spring:
+  application:
+    name: server-gateway
+  profiles:
+    active: dev
+
 #请求和响应GZIP压缩支持
 feign:
   httpclient:

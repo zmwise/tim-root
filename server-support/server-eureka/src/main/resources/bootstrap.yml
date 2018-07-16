@@ -1,5 +1,5 @@
 spring:
   application:
-    name: server-gateway
+    name: server-eureka
   profiles:
     active: dev
