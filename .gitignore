@@ -1,6 +1,7 @@
 ### Java ###
 */target
 /target
+/target/
 
 ### STS ###
 .apt_generated

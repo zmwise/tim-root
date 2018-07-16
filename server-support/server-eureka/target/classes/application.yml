@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: server-eureka
-  profiles:
-    active: dev
