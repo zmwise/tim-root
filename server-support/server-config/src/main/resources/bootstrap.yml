@@ -17,7 +17,7 @@ spring:
         git:
           uri: https://github.com/liwiseap/config-repo/
           username: liwiseap@163.com
-          password: sbtdkjje812
+          password:
           search-paths: operation-system,service-user,server-eureka,server-gateway
 #        native:
 #          search-locations: D:\\server-config\\config-files
