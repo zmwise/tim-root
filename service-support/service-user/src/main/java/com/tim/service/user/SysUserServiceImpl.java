@@ -44,6 +44,18 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> impleme
     }
 
     @Override
+    public SysUser getByUsername(String username) {
+        Map<String,Object> param = new HashMap<>();
+        param.put("username",username);
+        List<SysUser> users = sysUserDao.selectByMap(param);
+        if(users!=null && users.size()>0){
+            return users.get(0);
+        }else {
+            return null;
+        }
+    }
+
+    @Override
     public String getToken(String username, String password) throws Exception {
         SysUserDto info = this.validate(username,password);
         if (info.getId()!=null && info.getId()>0) {

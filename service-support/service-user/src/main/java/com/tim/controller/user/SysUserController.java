@@ -9,6 +9,7 @@ import com.tim.result.Status;
 import com.tim.service.user.ISysUserService;
 import com.tim.sys.user.SysUserDto;
 import com.tim.syslog.SysControllerLog;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,20 @@ public class SysUserController {
     @SysControllerLog(desc = "根据ID获取系统用户")
     public String getById(String userId){
         SysUser user = sysUserService.getById(Long.valueOf(userId));
+        return JSON.toJSONString(user);
+    }
+
+    /**
+     * @auther: lizhiming
+     * @date: 2018/4/20 16:03
+     */
+    @PostMapping("/getByUsername")
+    @SysControllerLog(desc = "根据Username获取系统用户")
+    public String getByUsername(String username){
+        SysUser user = sysUserService.getByUsername(username);
+        if(user == null){
+            return StringUtils.EMPTY;
+        }
         return JSON.toJSONString(user);
     }
 

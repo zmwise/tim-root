@@ -17,6 +17,8 @@ public interface ISysUserService extends IService<SysUser> {
      */
     SysUser getById(Long userId);
 
+    SysUser getByUsername(String username);
+
     SysUserDto validate(String username,String password);
 
     SysUserDto getUserInfo(String token) throws Exception;
