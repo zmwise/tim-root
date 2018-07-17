@@ -18,6 +18,8 @@ public class HelloController {
     private String configVal;
     @Value("${tim.defConfigVal}")
     private String defConfigVal;
+    @Value("${config-from}")
+    private String configFrom;
 
     @Autowired
     private JedisPool jedisPool;
@@ -30,7 +32,7 @@ public class HelloController {
     @GetMapping("/send")
     public String send(){
         String value = jedisPool.getResource().get("hello");
-        return "configVal=" + configVal + "    ---------     redisHelloVal="+value + "   ---------   defConfigVal="+defConfigVal;
+        return "configFrom="+configFrom+"------configVal=" + configVal + "------redisHelloVal="+value + "------defConfigVal="+defConfigVal;
     }
 
 

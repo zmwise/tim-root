@@ -1,4 +1,4 @@
-from: server-config-server-gateway-test
+config-from: server-config-server-gateway-test
 
 server:
   port: 8762

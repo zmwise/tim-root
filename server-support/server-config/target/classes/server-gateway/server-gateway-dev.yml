@@ -1,4 +1,4 @@
-from: server-config-server-gateway-dev
+config-from: server-config-server-gateway-dev
 
 server:
   port: 8762

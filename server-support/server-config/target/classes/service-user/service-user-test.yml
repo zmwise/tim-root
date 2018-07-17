@@ -1,4 +1,4 @@
-from: server-config-service-user-test
+config-from: server-config-service-user-test
 
 server:
   port: 2001

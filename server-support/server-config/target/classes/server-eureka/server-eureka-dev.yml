@@ -1,4 +1,4 @@
-from: server-config-server-eureka-dev
+config-from: server-config-server-eureka-dev
 
 server:
   port: 8761 #启动端口

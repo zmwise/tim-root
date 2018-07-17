@@ -1,5 +1,5 @@
 # 运营系统的开发环境配置
-from: server-config-operation-system-dev
+config-from: server-config-operation-system-dev
 
 # 服务端口配置
 server:

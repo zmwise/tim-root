@@ -1,4 +1,4 @@
-from: server-config-service-user-dev
+config-from: server-config-service-user-dev
 
 server:
   port: 2001
