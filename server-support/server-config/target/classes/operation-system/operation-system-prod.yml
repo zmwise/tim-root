@@ -1,8 +1,0 @@
-# 运营系统的生产环境配置
-config-from: server-config-operation-system-prod
-
-# 其它属性定义
-tim:
-  configVal: 配置中心运营系统生产属性
-
-
