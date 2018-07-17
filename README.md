@@ -29,8 +29,8 @@
 2.创建数据库执行demo.sql
 3.server-config项目的resources/config下面的文件复制到D:\\server-config\\config-files下面作为公共配置
 4.项目导入IDEA中、按spring boot项目启动方式启动项目,启动顺序基本先启动
- - server-config、
  - server-eureka、
+ - server-config、
  - service-user、
  - operation-system、
  - server-eureka 

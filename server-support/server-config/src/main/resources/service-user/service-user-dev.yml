@@ -9,6 +9,11 @@ eureka:
       defaultZone: http://127.0.0.1:8761/eureka/
 
 spring:
+  # redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
   #datasource config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

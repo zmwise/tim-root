@@ -17,7 +17,7 @@ spring:
         git:
           uri: https://github.com/liwiseap/config-repo/
           username: liwiseap@163.com
-          password:
+          password: sbtdkjje812
           search-paths: operation-system,service-user,server-eureka,server-gateway
 #        native:
 #          search-locations: D:\\server-config\\config-files
@@ -36,6 +36,12 @@ spring:
 # 加解密用的秘钥
 encrypt:
   key: xstRxoapwerPmuren
+
+# 配置服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
 
 # svn配置
 #        svn:

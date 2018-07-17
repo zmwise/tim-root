@@ -3,9 +3,13 @@ spring:
     name: server-gateway
   cloud:
     config:
+      discovery:
+        enabled: true
+        service-id: server-config
       profile: dev
       label: master
-      uri: http://127.0.0.1:8888 # cloud config 配置中心地址
+      fail-fast: true # 有效避免配置有误，加载前置内容时间过长
+#      uri: http://127.0.0.1:8888 # cloud config 配置中心地址
 
 #请求和响应GZIP压缩支持
 feign:
