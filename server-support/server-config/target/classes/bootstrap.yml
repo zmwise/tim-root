@@ -17,7 +17,7 @@ spring:
         git:
           uri: https://github.com/liwiseap/config-repo/
           username: liwiseap@163.com
-          password: sbtdkjje812
+          password: 
           search-paths: operation-system,service-user,server-eureka,server-gateway
 #        native:
 #          search-locations: D:\\server-config\\config-files
@@ -26,6 +26,12 @@ spring:
 # 支持加密存储
         encrypt:
           enabled: true
+
+  # redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
 
 # 加解密用的秘钥
 encrypt:

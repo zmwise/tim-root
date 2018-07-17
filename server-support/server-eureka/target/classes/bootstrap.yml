@@ -3,3 +3,8 @@ spring:
     name: server-eureka
   profiles:
     active: dev
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://127.0.0.1:8888 # cloud config 配置中心地址

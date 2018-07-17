@@ -1,3 +1,5 @@
+from: server-config-service-user-prod
+
 server:
   port: 2001
 

@@ -1,3 +1,5 @@
+from: server-config-service-user-dev
+
 server:
   port: 2001
 
@@ -7,11 +9,6 @@ eureka:
       defaultZone: http://127.0.0.1:8761/eureka/
 
 spring:
-  cloud:
-      config:
-        # cloud config 配置中心地址
-        uri: http://127.0.0.1:8888
-
   #datasource config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

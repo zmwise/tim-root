@@ -3,6 +3,11 @@ spring:
     name: server-gateway
   profiles:
     active: dev
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://127.0.0.1:8888 # cloud config 配置中心地址
 
 #请求和响应GZIP压缩支持
 feign:

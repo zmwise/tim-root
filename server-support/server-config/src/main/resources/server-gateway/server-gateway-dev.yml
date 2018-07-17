@@ -1,3 +1,5 @@
+from: server-config-server-gateway-dev
+
 server:
   port: 8762
 
@@ -7,10 +9,6 @@ eureka:
       defaultZone: http://127.0.0.1:8761/eureka/
 
 spring:
-  cloud:
-      config:
-        uri: http://127.0.0.1:8888 # cloud config 配置中心地址
-
   # redis 配置
   redis:
     host: 127.0.0.1
