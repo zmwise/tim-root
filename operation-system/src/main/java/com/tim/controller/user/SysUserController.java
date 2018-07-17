@@ -5,11 +5,10 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.tim.entity.sys.resource.SysResource;
 import com.tim.entity.sys.user.SysUser;
 import com.tim.fegin.upload.UploadService;
-import com.tim.request.JwtAuthenticationRequest;
+import com.tim.fegin.user.SysUserService;
 import com.tim.result.Result;
 import com.tim.result.ResultFactory;
 import com.tim.result.Status;
-import com.tim.fegin.user.SysUserService;
 import com.tim.sys.user.SysUserDto;
 import com.tim.syslog.SysControllerLog;
 import lombok.extern.slf4j.Slf4j;
@@ -62,14 +61,6 @@ public class SysUserController {
         } else {
             return ResultFactory.successData(userInfo);
         }
-    }
-
-    @RequestMapping(value = "token", method = RequestMethod.POST)
-    public Result createAuthenticationToken(
-            @RequestBody JwtAuthenticationRequest jwt) throws Exception {
-        log.info(jwt.getUsername()+" require logging...");
-        String token = sysUserService.getToken(jwt);
-        return ResultFactory.successData(token);
     }
 
     @SysControllerLog(desc = "查询用户拥有的所有资源权限")

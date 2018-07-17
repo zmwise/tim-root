@@ -23,5 +23,4 @@ public interface ISysUserService extends IService<SysUser> {
 
     SysUserDto getUserInfo(String token) throws Exception;
 
-    String getToken(String username, String password) throws Exception;
 }
